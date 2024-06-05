@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-image: url('/static/background.jpg'); /* Replace with your desired background image URL */
+            background-size: cover;
+            background-position: center;
+            color: #1c1ecc;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: -50px auto 50px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        form h2 {
+            grid-column: span 2;
+            font-size: 24px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            padding: 10px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            grid-column: span 2;
+            text-align: center;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Resume Builder</h1>
+    <p>Create your professional resume in minutes</p>
+</div>
+
+<div class="container">
+    <form method="POST" action="/generate_resume">
+        <!-- Personal Details -->
+        <h2>Personal Details</h2>
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+
+        <!-- Education -->
+        <h2>Education</h2>
+        <div class="form-group">
+            <label for="degree">Degree</label>
+            <input type="text" id="degree" name="degree" required>
+        </div>
+        <div class="form-group">
+            <label for="university">University</label>
+            <input type="text" id="university" name="university" required>
+        </div>
+        <div class="form-group">
+            <label for="education_years">Years Attended</label>
+            <input type="text" id="education_years" name="education_years" required>
+        </div>
+
+        <!-- Experience -->
+        <h2>Experience</h2>
+        <div class="form-group">
+            <label for="job_title">Job Title</label>
+            <input type="text" id="job_title" name="job_title" required>
+        </div>
+        <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" required>
+        </div>
+        <div class="form-group">
+            <label for="job_years">Years Worked</label>
+            <input type="text" id="job_years" name="job_years" required>
+        </div>
+        <div class="form-group" style="grid-column: span 2;">
+            <label for="job_description">Job Description</label>
+            <textarea id="job_description" name="job_description" rows="4" required></textarea>
+        </div>
+
+        <!-- Skills -->
+        <h2>Skills</h2>
+        <div class="form-group" style="grid-column: span 2;">
+            <label for="skills">Skills</label>
+            <textarea id="skills" name="skills" rows="4" required></textarea>
+        </div>
+
+        <!-- Additional Content -->
+        <h2>Additional Information</h2>
+        <div class="form-group">
+            <label for="certifications">Certifications</label>
+            <textarea id="certifications" name="certifications" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="languages">Languages</label>
+            <textarea id="languages" name="languages" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="hobbies">Hobbies</label>
+            <textarea id="hobbies" name="hobbies" rows="3"></textarea>
+        </div>
+
+        <button type="submit"><i class="fas fa-file-pdf"></i> Create Resume</button>
+    </form>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Resume Builder. All rights reserved.</p>
+    <p>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a> |
+        <a href="#">Privacy Policy</a>
+    </p>
+</div>
+
+</body>
+</html>
